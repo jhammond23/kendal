@@ -1,38 +1,418 @@
-.App {
+* {
+  font-family: 'Roboto Slab';
+  letter-spacing: 2px;
+}
+
+.dark-cover {
+  background: linear-gradient(to bottom, transparent 80%, black);
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.dark-cover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background: linear-gradient(to bottom, transparent, black);
+}
+
+.dark-cover:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: black;
+}
+
+.block-1 {
+  background: url('./media/newPic2.jpg');
+  width:100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60% 38%;
+  box-shadow: inset 0 50px 550px black, inset 0 50px 550px black, inset 0 50px 550px black;
+  overflow-x: hidden;
+}
+
+.stat-card {
+  background-color: #111;
+  filter:grayscale(.5);
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
+  white-space: pre-wrap;
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  border: 2px solid white;
+  animation: slide-in .15s ease;
+  border-radius: 15px;
+  margin-top: 1rem;
+  height: fit-content;
+  max-width: 300px;
+  padding: 20px;
+  box-shadow:  0 0 10px 1px white;
+
+}
+
+.rb-highlights {
+  background-color: black;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+  90% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.stat-card-button {
+  color: whitesmoke;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  z-index: 1;
+  border: 1px solid whitesmoke;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+  height: 60vh;
+  width: 15%;
+  position: relative;
+  margin-bottom: 5%;
+  text-shadow: 0 5px 5px black;
+  margin: 5% 1%;
+  transition: .35s ease all;
+}
+
+.stat-card-button::before:hover {
+  opacity: .3;
+}
+
+.stat-card-button-1 {
+  background: url('./media/coolPic8.jpg');
+  background-position: center center;
+  background-size: cover;
+  
+}
+
+.stat-card-button-2 {
+  background: url('./media/coolPic9.jpg');
+  background-position: center 35%;
+  background-size: calc(cover + 50%);
+  filter: grayscale(.5);
+}
+
+.stat-card-button-3 {
+  background-image: url('../src/media/coolPic2.jpg');
+  background-position: 65% center;
+  background-size: cover;
+  filter: grayscale(.5);
+}
+
+.stat-card-button-4 {
+  background-image: url('../src/media/coolPic7.jpg');
+  background-position: 65% center;
+  background-size: cover;
+  filter: grayscale(.5);
+}
+
+.stat-card-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: 15px;
+}
+
+.stat-card-button-1:hover,
+.stat-card-button-3:hover {
+  scale: 103%;
+  border: 1px solid rgb(255, 73, 73);
+  box-shadow: 0 0 8px 3px rgb(255, 73, 73);
+}
+
+.stat-card-button-1:hover {
+  border: 1px solid rgb(255, 187, 187);
+}
+
+
+.stat-card-button-2:hover,
+.stat-card-button-4:hover {
+  scale: 103%;
+  border: 1px solid rgb(73, 73, 255);
+  box-shadow: 0 0 8px 3px rgb(73, 73, 255);;
+}
+
+.stat-card li {
+  padding: 20px 0;
+  border-bottom: 1px solid white;
+}
+
+.stat-card li:last-child {
+  border-bottom: none;
+}
+
+#weight-room {
+  background-color: black;
+}
+
+.stat-button-cont {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.block-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 20px;
+  height: fit-content;
+  width: 100%;
+  justify-content: center;
+  border-bottom: 2px solid whitesmoke;
+  padding-bottom: 5%;
+  background-image: repeating-conic-gradient(#000000 0% 25%, #020202 0% 50%);
+  background-position: 0 0, 19px 19px;
+  background-size: 38px 38px;
+  background-color: #050505;
+  box-shadow: inset 0 0 250px 15px black; 
+}
+
+.b2-v1, .b2-v2, .b2-v3, .b2-v4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  padding: 3% 10%;
+  box-sizing: border-box;
+  margin: auto;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.b2-v1, .b2-v3 {
+  justify-content: flex-start;
+}
+
+.b2-v2, .b2-v4 {
+  justify-content: flex-end;
+}
+
+.video-div {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  min-width: 300px;
+
+}
+
+.video-div video {
+  width: 100%;
+  margin: auto;
+  border: 20px solid #111;
+  box-shadow: 0 0 10px 2px whitesmoke;
+  border-bottom: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-fade {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.text-top {
+  color: whitesmoke;
+  margin: 0 auto;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #555;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.receipts {
+  color: whitesmoke;
+  width: fit-content;
+  display: block;
+  background-color: black;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  border: 4px solid whitesmoke;
+  padding: 1% 3%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.block-3 {
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.coolpic3-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./media/newPic1-wo-ref.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+  filter: brightness(.9);
+  box-shadow: inset 0 50px 550px black, inset 0 50px 550px black, inset 0 50px 550px black, inset 0 50px 550px black, inset 0 50px 550px black;
+  filter: grayscale(.7);
+  -webkit-backface-visibility: hidden; /* To avoid flickering in some browsers */
+  backface-visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.1s; /* Updated transition */
+  will-change: transform;
+}
+
+
+.coolpic3-background.visible {
+  opacity: 1;
+}
+
+.block-4 {
+  height: fit-content;
+  border-top: 2px solid white;
+  background-image: repeating-conic-gradient(#000000 0% 25%, #020202 0% 50%);
+  background-position: 0 0, 19px 19px;
+  background-size: 38px 38px;
+  background-color: #050505;
+  box-shadow: inset 0 0 250px 15px black; 
+  padding-bottom: 100px;
+}
+
+.main-high-light {
   display: flex;
+  width: 50%;
+  margin: 8% auto;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main-high-light iframe,
+.main-high-light video {
+  aspect-ratio: 16/9;
+  border: 20px solid #111;
+  box-shadow: 0 0 10px 2px whitesmoke;
+  border-bottom: 2px solid red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.high-light-videos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 50%;
+  grid-gap: 20px;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+
+.high-light-videos iframe {
+  width: 80%;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  border: 20px solid #111;
+  box-shadow: 0 0 10px 2px whitesmoke;
+  border-bottom: 2px solid red;
+  margin-bottom: 5%;
+}
+
+.main-high-lights-title {
+  display: flex;
+  width: 100%;
+  font-size: 3rem;
+  margin: 2% auto;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.yellow {
+  color: rgb(255, 230, 0);
+}
+
+.center {
+  text-align: center;
+  
+}
+
+@media (max-width: 1100px) {
+  .text-top {
+    font-size: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  .main-high-lights-title {
+    font-size: 2rem;
+  }
+  .stat-card-button {
+    width: 60%;
+  }
+  .block-2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-high-light {
+    width: 88%;
+    margin-top: 5%;
+  }
+  .main-high-lights-title {
+    margin: 5% 0%;
+  }
+  .high-light-videos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .block-1 {
+    box-shadow: none;
+  }
+  .coolpic3-background {
+    box-shadow: none;
   }
 }
+
+@media (max-width: 600px) {
+  .text-top {
+    font-size: 1.25rem;
+  }
+  .main-high-lights-title {
+    font-size: 1.5rem;
+  }
+  .video-thumbnail {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+}
+
